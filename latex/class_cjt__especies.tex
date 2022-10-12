@@ -1,0 +1,608 @@
+\hypertarget{class_cjt__especies}{}\doxysection{Referencia de la Clase Cjt\+\_\+especies}
+\label{class_cjt__especies}\index{Cjt\_especies@{Cjt\_especies}}
+
+
+Representa el conjunto de características y operaciones relativas al conjunto de especies.  
+
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cjt__especies_ab297567c73ccd8caefbd8760d90294a1}{Cjt\+\_\+especies}} ()
+\begin{DoxyCompactList}\small\item\em Constructora por defecto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cjt__especies_a05182978f6fff11a0fa1cec49514dd5e}{$\sim$\+Cjt\+\_\+especies}} ()
+\begin{DoxyCompactList}\small\item\em Destructora por defecto. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_cjt__especies_a89deb81b1cc83863d1830ab05b473132}{existe\+\_\+especie}} (const string \&id\+\_\+especie) const
+\begin{DoxyCompactList}\small\item\em Consultora\+: Indica si la especie existe o no. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_cjt__especies_aa3a4ba2dd9cf056739ab0a97c549379d}{obtener\+\_\+gen}} (const string \&id\+\_\+especie) const
+\begin{DoxyCompactList}\small\item\em Consultora\+: Devuelve el gen asociado al identificador. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_cjt__especies_ab59e25df0794d18893a1fe0fc1b86da6}{distancia\+\_\+cjt}} (const string \&id\+\_\+a, const string \&id\+\_\+b) const
+\begin{DoxyCompactList}\small\item\em Consultora\+: Devuelve la distancia entre dos especies. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cjt__especies_aa95efc97c3deb6fdf8aea2d74c2fabbc}{crea\+\_\+especie}} (const \mbox{\hyperlink{class_especie}{Especie}} \&e)
+\begin{DoxyCompactList}\small\item\em Modificadora\+: Acción que añade la especie al conjunto del p.\+i. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cjt__especies_a30828ba7b13ef16d4d15b3c75fb7a3e3}{elimina\+\_\+especie}} (const string \&id\+\_\+especie)
+\begin{DoxyCompactList}\small\item\em Modificadora\+: Acción que elimina una especie del conjunto de especies. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cjt__especies_a8c19a46235a5c9ec727373ae35d6a615}{inicializa\+\_\+clusters}} (\mbox{\hyperlink{class_cjt__clusters}{Cjt\+\_\+clusters}} \&clu)
+\begin{DoxyCompactList}\small\item\em Modificadora\+: Inicializa un conjunto de clústers con las especies del p.\+i. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cjt__especies_a7ddd1ba65a5f594da23780f1ccaa5682}{lee\+\_\+cjt\+\_\+especies}} (const int k)
+\begin{DoxyCompactList}\small\item\em Lectura\+: Acción que lee un conjunto de especies. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cjt__especies_aba7f0f935b6e0b8eb38337ad8675fead}{imprime\+\_\+cjt\+\_\+especies}} () const
+\begin{DoxyCompactList}\small\item\em Escritura\+: Acción que imprime un conjunto de especies. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cjt__especies_a653d6b120928015ad38a5dc30ebeec8e}{tabla\+\_\+distancias}} () const
+\begin{DoxyCompactList}\small\item\em Escritura\+: Acción que imprime la tabla de distancias. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos privados}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_cjt__especies_a31440ead967629d65990b2e2525b71cb}{crea\+\_\+distancias}} ()
+\begin{DoxyCompactList}\small\item\em Modificadora\+: Crea una tabla de distancias para el conjunto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cjt__especies_a55de755e321a05a752849e21c86e5615}{inserta\+\_\+tab}} (const \mbox{\hyperlink{class_especie}{Especie}} \&e)
+\begin{DoxyCompactList}\small\item\em Modificadora\+: Modifica la tabla de distancias después de añadir una especie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cjt__especies_acd5e477b64f0b1e968efbc79d56e3639}{elimina\+\_\+tab}} (const string \&id)
+\begin{DoxyCompactList}\small\item\em Modificadora\+: Modifica la tabla de distancias después de eliminar una especie.\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ string, \mbox{\hyperlink{class_especie}{Especie}} $>$ \mbox{\hyperlink{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}{Cjt}}
+\begin{DoxyCompactList}\small\item\em Conjunto de especies; el primer elemento es el identificador y el segundo es la especie. \end{DoxyCompactList}\item 
+map$<$ string, map$<$ string, double $>$ $>$ \mbox{\hyperlink{class_cjt__especies_afb202e1d944b7d3761a99181c7e43239}{Tabla}}
+\begin{DoxyCompactList}\small\item\em Conjunto de distancias entre especies. El primer elemento del primer bloque es el identificador de una especie, y el primer elemento del segundo bloque es el identificador de la segunda especie. El segundo elemento del segundo bloque es la distancia entre ambas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa el conjunto de características y operaciones relativas al conjunto de especies. 
+
+Implementa los métodos para crear la tabla distancias entre cada par de especies, así como las que la mofifican al añadir o eliminar una especie al conjunto (funcionalidades también de este módulo). Ofrece también, el método que iniciliza clústers con la información del conjunto de especies y un método distancia como paso previo para calcular la distancia entre dos especies. A parte, contiene los típicos métodos boolena de existencia y de lectura y escritura. y la consultora para obtener el gen asociado a un identificador. Finalmente, contiene un método para imprimir la tabla de distancias del parámetro implícito. 
+
+Definición en la línea 25 del archivo Cjt\+\_\+especies.\+hh.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{class_cjt__especies_ab297567c73ccd8caefbd8760d90294a1}\label{class_cjt__especies_ab297567c73ccd8caefbd8760d90294a1}} 
+\index{Cjt\_especies@{Cjt\_especies}!Cjt\_especies@{Cjt\_especies}}
+\index{Cjt\_especies@{Cjt\_especies}!Cjt\_especies@{Cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{Cjt\_especies()}{Cjt\_especies()}}
+{\footnotesize\ttfamily Cjt\+\_\+especies\+::\+Cjt\+\_\+especies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructora por defecto. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cierto.} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Crea un \mbox{\hyperlink{class_cjt__especies}{Cjt\+\_\+especies}} vacío. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 9 del archivo Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_a05182978f6fff11a0fa1cec49514dd5e}\label{class_cjt__especies_a05182978f6fff11a0fa1cec49514dd5e}} 
+\index{Cjt\_especies@{Cjt\_especies}!````~Cjt\_especies@{$\sim$Cjt\_especies}}
+\index{````~Cjt\_especies@{$\sim$Cjt\_especies}!Cjt\_especies@{Cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{$\sim$Cjt\_especies()}{~Cjt\_especies()}}
+{\footnotesize\ttfamily Cjt\+\_\+especies\+::$\sim$\+Cjt\+\_\+especies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructora por defecto. 
+
+
+
+Definición en la línea 11 del archivo Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11 \{\}  }
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_cjt__especies_a31440ead967629d65990b2e2525b71cb}\label{class_cjt__especies_a31440ead967629d65990b2e2525b71cb}} 
+\index{Cjt\_especies@{Cjt\_especies}!crea\_distancias@{crea\_distancias}}
+\index{crea\_distancias@{crea\_distancias}!Cjt\_especies@{Cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{crea\_distancias()}{crea\_distancias()}}
+{\footnotesize\ttfamily void Cjt\+\_\+especies\+::crea\+\_\+distancias (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Modificadora\+: Crea una tabla de distancias para el conjunto. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cierto.} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Crea una tabla de distancias para el p.\+i. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 53 del archivo Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53                                     \{}
+\DoxyCodeLine{54     \textcolor{comment}{// Crea la tabla de distancias para el conjunto de especies}}
+\DoxyCodeLine{55     map<string,Especie>::iterator it\_a=\mbox{\hyperlink{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}{Cjt}}.begin();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{comment}{// Inv: it<=Cjt.end()}}
+\DoxyCodeLine{58     \textcolor{comment}{// Se han calculado y añadido a la tabla de distancias las distancias de los elementos anteriores a it\_a}}
+\DoxyCodeLine{59     \textcolor{comment}{// con el resto de especies. Las distancias de los elementos posteriores a it\_a no han sido tratadas.}}
+\DoxyCodeLine{60     \textcolor{keywordflow}{while} (it\_a!=\mbox{\hyperlink{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}{Cjt}}.end()) \{}
+\DoxyCodeLine{61         map<string,Especie>::iterator it\_b=it\_a;}
+\DoxyCodeLine{62         ++it\_b;}
+\DoxyCodeLine{63         map<string,double> aux;}
+\DoxyCodeLine{64         \textcolor{comment}{// Inv: it\_a<it\_b<=Cjt.end()}}
+\DoxyCodeLine{65         \textcolor{comment}{// Se han calculado y añadido las distancias de los elementos anteriores a it\_b}}
+\DoxyCodeLine{66         \textcolor{comment}{// con it\_a. Las distancias de it\_a con los elementos posteriores a it\_b no han sido tratadas.}}
+\DoxyCodeLine{67         \textcolor{keywordflow}{while} (it\_b!=\mbox{\hyperlink{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}{Cjt}}.end())\{}
+\DoxyCodeLine{68             \textcolor{keywordtype}{double} d=it\_a-\/>second.distancia(it\_b-\/>second);}
+\DoxyCodeLine{69             aux.insert(make\_pair((*it\_b).first,d));}
+\DoxyCodeLine{70             ++it\_b;}
+\DoxyCodeLine{71         \}}
+\DoxyCodeLine{72         \textcolor{comment}{// Post: se han calculado todas las distancias de los elementos desde it\_b=it\_a+1}}
+\DoxyCodeLine{73         \textcolor{comment}{// hasta Cjt.end()-\/1}}
+\DoxyCodeLine{74         \mbox{\hyperlink{class_cjt__especies_afb202e1d944b7d3761a99181c7e43239}{Tabla}}.insert(make\_pair((*it\_a).first,aux));}
+\DoxyCodeLine{75         ++it\_a;}
+\DoxyCodeLine{76     \}}
+\DoxyCodeLine{77     \textcolor{comment}{// Post: se han calculado todas las distancias de los elementos desde Cjt.begin()}}
+\DoxyCodeLine{78     \textcolor{comment}{// hasta Cjt.end()-\/1}}
+\DoxyCodeLine{79 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_a55de755e321a05a752849e21c86e5615}\label{class_cjt__especies_a55de755e321a05a752849e21c86e5615}} 
+\index{Cjt\_especies@{Cjt\_especies}!inserta\_tab@{inserta\_tab}}
+\index{inserta\_tab@{inserta\_tab}!Cjt\_especies@{Cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{inserta\_tab()}{inserta\_tab()}}
+{\footnotesize\ttfamily void Cjt\+\_\+especies\+::inserta\+\_\+tab (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_especie}{Especie}} \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Modificadora\+: Modifica la tabla de distancias después de añadir una especie. 
+
+\begin{DoxyPrecond}{Precondición}
+Las distancias de la nueva especie añadida al conjunto no existen en la tabla del p.\+i. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se añaden las distancias con todo el conjunto de la especie nueva pasada por referencia en la tabla de distancias. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 81 del archivo Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{81                                                \{}
+\DoxyCodeLine{82     \textcolor{comment}{// Inserta las distancias en la tabla del conjunto con la nueva especie e}}
+\DoxyCodeLine{83     map<string, map<string,double> >::iterator it = \mbox{\hyperlink{class_cjt__especies_afb202e1d944b7d3761a99181c7e43239}{Tabla}}.begin();}
+\DoxyCodeLine{84     \textcolor{keywordtype}{string} \textcolor{keywordtype}{id}=e.\mbox{\hyperlink{class_especie_adcaec4823514dce6631195f700ff90bc}{consultar\_id\_especie}}();}
+\DoxyCodeLine{85     map<string,double> aux;}
+\DoxyCodeLine{86     \textcolor{comment}{// Inv: it<=Tabla.end()}}
+\DoxyCodeLine{87     \textcolor{comment}{// Se han recalculado las distancias de los elementos anteriores a it.}}
+\DoxyCodeLine{88     \textcolor{comment}{// Las distancias de los elementos posteriores a it no han sido calculadas.}}
+\DoxyCodeLine{89     \textcolor{keywordflow}{while} (it!=\mbox{\hyperlink{class_cjt__especies_afb202e1d944b7d3761a99181c7e43239}{Tabla}}.end()) \{}
+\DoxyCodeLine{90         \textcolor{keywordflow}{if} (\textcolor{keywordtype}{id}>(*it).first) \{}
+\DoxyCodeLine{91             \textcolor{keywordtype}{double} d=e.\mbox{\hyperlink{class_especie_a399c911e6920adc909c2036d6bb2635f}{distancia}}(\mbox{\hyperlink{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}{Cjt}}.find(it-\/>first)-\/>second);}
+\DoxyCodeLine{92             it-\/>second.insert(make\_pair(\textcolor{keywordtype}{id},d));}
+\DoxyCodeLine{93         \}}
+\DoxyCodeLine{94         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keywordtype}{id}<(*it).first) \{}
+\DoxyCodeLine{95             \textcolor{keywordtype}{double} d=e.\mbox{\hyperlink{class_especie_a399c911e6920adc909c2036d6bb2635f}{distancia}}(\mbox{\hyperlink{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}{Cjt}}.find(it-\/>first)-\/>second);}
+\DoxyCodeLine{96             aux.insert(make\_pair((*it).first,d));}
+\DoxyCodeLine{97         \}}
+\DoxyCodeLine{98         ++it;}
+\DoxyCodeLine{99     \}}
+\DoxyCodeLine{100     \textcolor{comment}{// Post: se han recalculado todas las distancias de los elementos desde Tabla.begin()}}
+\DoxyCodeLine{101     \textcolor{comment}{// hasta Tabla.end()-\/1}}
+\DoxyCodeLine{102     \mbox{\hyperlink{class_cjt__especies_afb202e1d944b7d3761a99181c7e43239}{Tabla}}.insert(make\_pair(\textcolor{keywordtype}{id},aux));}
+\DoxyCodeLine{103 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_acd5e477b64f0b1e968efbc79d56e3639}\label{class_cjt__especies_acd5e477b64f0b1e968efbc79d56e3639}} 
+\index{Cjt\_especies@{Cjt\_especies}!elimina\_tab@{elimina\_tab}}
+\index{elimina\_tab@{elimina\_tab}!Cjt\_especies@{Cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{elimina\_tab()}{elimina\_tab()}}
+{\footnotesize\ttfamily void Cjt\+\_\+especies\+::elimina\+\_\+tab (\begin{DoxyParamCaption}\item[{const string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Modificadora\+: Modifica la tabla de distancias después de eliminar una especie.\+: 
+
+\begin{DoxyPrecond}{Precondición}
+La especie con el id pasado por referencia existía en el conjunto pero ha sido eliminada. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se han eliminado las distancias de la tabla asociadas a la especie pasada por referencia que ha sido previamente eliminada. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 105 del archivo Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{105                                                \{}
+\DoxyCodeLine{106     \textcolor{comment}{// Elimina las distancias de la tabla del conjunto con la especie del identificador}}
+\DoxyCodeLine{107     map<string, map<string,double> >::iterator it = \mbox{\hyperlink{class_cjt__especies_afb202e1d944b7d3761a99181c7e43239}{Tabla}}.begin();}
+\DoxyCodeLine{108     \textcolor{comment}{// Inv: it<=Tabla.end()}}
+\DoxyCodeLine{109     \textcolor{comment}{// Se han eliminado las distancias de los elementos anteriores a it.}}
+\DoxyCodeLine{110     \textcolor{comment}{// Las distancias de los elementos posteriores a it no han sido tratadas.}}
+\DoxyCodeLine{111     \textcolor{keywordflow}{while} (it!=\mbox{\hyperlink{class_cjt__especies_afb202e1d944b7d3761a99181c7e43239}{Tabla}}.end() and (it-\/>first)<\textcolor{keywordtype}{id}) \{}
+\DoxyCodeLine{112         it-\/>second.erase(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{113         ++it;}
+\DoxyCodeLine{114     \}}
+\DoxyCodeLine{115     \textcolor{comment}{// Post: se han eliminado todas las distancias de los elementos desde Tabla.begin()}}
+\DoxyCodeLine{116     \textcolor{comment}{// hasta el anterior a it}}
+\DoxyCodeLine{117     \mbox{\hyperlink{class_cjt__especies_afb202e1d944b7d3761a99181c7e43239}{Tabla}}.erase(it);}
+\DoxyCodeLine{118 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_a89deb81b1cc83863d1830ab05b473132}\label{class_cjt__especies_a89deb81b1cc83863d1830ab05b473132}} 
+\index{Cjt\_especies@{Cjt\_especies}!existe\_especie@{existe\_especie}}
+\index{existe\_especie@{existe\_especie}!Cjt\_especies@{Cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{existe\_especie()}{existe\_especie()}}
+{\footnotesize\ttfamily bool Cjt\+\_\+especies\+::existe\+\_\+especie (\begin{DoxyParamCaption}\item[{const string \&}]{id\+\_\+especie }\end{DoxyParamCaption}) const}
+
+
+
+Consultora\+: Indica si la especie existe o no. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cierto.} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado indica si la especie existe en el p.\+i. o no. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 16 del archivo Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16                                                                 \{}
+\DoxyCodeLine{17     \textcolor{comment}{// Indica si la especie existe en el conjunto}}
+\DoxyCodeLine{18     map<string,Especie>::const\_iterator it = \mbox{\hyperlink{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}{Cjt}}.find(id\_especie);}
+\DoxyCodeLine{19     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}{Cjt}}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{20     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{21 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_aa3a4ba2dd9cf056739ab0a97c549379d}\label{class_cjt__especies_aa3a4ba2dd9cf056739ab0a97c549379d}} 
+\index{Cjt\_especies@{Cjt\_especies}!obtener\_gen@{obtener\_gen}}
+\index{obtener\_gen@{obtener\_gen}!Cjt\_especies@{Cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{obtener\_gen()}{obtener\_gen()}}
+{\footnotesize\ttfamily string Cjt\+\_\+especies\+::obtener\+\_\+gen (\begin{DoxyParamCaption}\item[{const string \&}]{id\+\_\+especie }\end{DoxyParamCaption}) const}
+
+
+
+Consultora\+: Devuelve el gen asociado al identificador. 
+
+\begin{DoxyPrecond}{Precondición}
+La especie existe en el p.\+i. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Devuelve el gen asociado al identificador id\+\_\+especie. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 23 del archivo Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23                                                                \{}
+\DoxyCodeLine{24     \textcolor{comment}{// Proporciona el gen del identificador }}
+\DoxyCodeLine{25     map<string,Especie>::const\_iterator it=\mbox{\hyperlink{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}{Cjt}}.find(id\_especie);}
+\DoxyCodeLine{26     \textcolor{keywordflow}{return} (*it).second.consultar\_gen();}
+\DoxyCodeLine{27 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_ab59e25df0794d18893a1fe0fc1b86da6}\label{class_cjt__especies_ab59e25df0794d18893a1fe0fc1b86da6}} 
+\index{Cjt\_especies@{Cjt\_especies}!distancia\_cjt@{distancia\_cjt}}
+\index{distancia\_cjt@{distancia\_cjt}!Cjt\_especies@{Cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{distancia\_cjt()}{distancia\_cjt()}}
+{\footnotesize\ttfamily double Cjt\+\_\+especies\+::distancia\+\_\+cjt (\begin{DoxyParamCaption}\item[{const string \&}]{id\+\_\+a,  }\item[{const string \&}]{id\+\_\+b }\end{DoxyParamCaption}) const}
+
+
+
+Consultora\+: Devuelve la distancia entre dos especies. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cierto.} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Devuelve la distancia entre los dos identificadores de los parámetros pasados por referencia. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 29 del archivo Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29                                                                               \{}
+\DoxyCodeLine{30     \textcolor{comment}{// Devuelve la distancia entre dos identificadores}}
+\DoxyCodeLine{31     map<string,Especie>::const\_iterator it\_a=\mbox{\hyperlink{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}{Cjt}}.find(id\_a);}
+\DoxyCodeLine{32     map<string,Especie>::const\_iterator it\_b=\mbox{\hyperlink{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}{Cjt}}.find(id\_b);}
+\DoxyCodeLine{33     \textcolor{comment}{//Llama a la función distancia con las especies encontradas }}
+\DoxyCodeLine{34     \textcolor{comment}{//de los identificadores id\_a y id\_b}}
+\DoxyCodeLine{35     \textcolor{keywordflow}{return} it\_a-\/>second.distancia(it\_b-\/>second);}
+\DoxyCodeLine{36 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_aa95efc97c3deb6fdf8aea2d74c2fabbc}\label{class_cjt__especies_aa95efc97c3deb6fdf8aea2d74c2fabbc}} 
+\index{Cjt\_especies@{Cjt\_especies}!crea\_especie@{crea\_especie}}
+\index{crea\_especie@{crea\_especie}!Cjt\_especies@{Cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{crea\_especie()}{crea\_especie()}}
+{\footnotesize\ttfamily void Cjt\+\_\+especies\+::crea\+\_\+especie (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_especie}{Especie}} \&}]{e }\end{DoxyParamCaption})}
+
+
+
+Modificadora\+: Acción que añade la especie al conjunto del p.\+i. 
+
+\begin{DoxyPrecond}{Precondición}
+La especie no existe en el conjunto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+La especie pasa a tener los atributos leídos en el programa principal (se calculan también los substrings asociados a las divisiones en k de su gen) y se añade al p.\+i. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 41 del archivo Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41                                                 \{}
+\DoxyCodeLine{42     \textcolor{comment}{// Inserta la especie e al conjunto de especies}}
+\DoxyCodeLine{43     \mbox{\hyperlink{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}{Cjt}}.insert(make\_pair(e.\mbox{\hyperlink{class_especie_adcaec4823514dce6631195f700ff90bc}{consultar\_id\_especie}}(),e));}
+\DoxyCodeLine{44     \mbox{\hyperlink{class_cjt__especies_a55de755e321a05a752849e21c86e5615}{inserta\_tab}}(e);}
+\DoxyCodeLine{45 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_a30828ba7b13ef16d4d15b3c75fb7a3e3}\label{class_cjt__especies_a30828ba7b13ef16d4d15b3c75fb7a3e3}} 
+\index{Cjt\_especies@{Cjt\_especies}!elimina\_especie@{elimina\_especie}}
+\index{elimina\_especie@{elimina\_especie}!Cjt\_especies@{Cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{elimina\_especie()}{elimina\_especie()}}
+{\footnotesize\ttfamily void Cjt\+\_\+especies\+::elimina\+\_\+especie (\begin{DoxyParamCaption}\item[{const string \&}]{id\+\_\+especie }\end{DoxyParamCaption})}
+
+
+
+Modificadora\+: Acción que elimina una especie del conjunto de especies. 
+
+\begin{DoxyPrecond}{Precondición}
+La especie existe en el conjunto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Elimina toda la información de la especie del p.\+i. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 47 del archivo Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{47                                                            \{}
+\DoxyCodeLine{48     \textcolor{comment}{// Elimina la especie e del conjunto de especies}}
+\DoxyCodeLine{49     \mbox{\hyperlink{class_cjt__especies_acd5e477b64f0b1e968efbc79d56e3639}{elimina\_tab}}(id\_especie);}
+\DoxyCodeLine{50     \mbox{\hyperlink{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}{Cjt}}.erase(id\_especie);}
+\DoxyCodeLine{51 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_a8c19a46235a5c9ec727373ae35d6a615}\label{class_cjt__especies_a8c19a46235a5c9ec727373ae35d6a615}} 
+\index{Cjt\_especies@{Cjt\_especies}!inicializa\_clusters@{inicializa\_clusters}}
+\index{inicializa\_clusters@{inicializa\_clusters}!Cjt\_especies@{Cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{inicializa\_clusters()}{inicializa\_clusters()}}
+{\footnotesize\ttfamily void Cjt\+\_\+especies\+::inicializa\+\_\+clusters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_cjt__clusters}{Cjt\+\_\+clusters}} \&}]{clu }\end{DoxyParamCaption})}
+
+
+
+Modificadora\+: Inicializa un conjunto de clústers con las especies del p.\+i. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cierto.} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se han inicializado un conjunto de clústers con las especies del p.\+i. Cada especie ha formado un clúster individual con distancia=-\/1 (no existe la distancia con ellos mismos). Ha inicializado también, la tabla de distancias de los diferentes clústers (al inicio, está tabla tomará los valores de las distancias entre las especies del conjunto). 
+\end{DoxyPostcond}
+
+
+Definición en la línea 120 del archivo Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{120                                                          \{}
+\DoxyCodeLine{121     \textcolor{comment}{// Función que comunica información del conjunto de especies con el conjunto de clústers}}
+\DoxyCodeLine{122     \textcolor{comment}{// consiguiendo así incializar un clúster para cada especie y crear la tabla inicial}}
+\DoxyCodeLine{123     \textcolor{comment}{// del conjunto de clústers    }}
+\DoxyCodeLine{124     \textcolor{keywordflow}{if} (not \mbox{\hyperlink{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}{Cjt}}.empty()) \{}
+\DoxyCodeLine{125         map<string,map<string,double>>::const\_iterator it=\mbox{\hyperlink{class_cjt__especies_afb202e1d944b7d3761a99181c7e43239}{Tabla}}.begin();}
+\DoxyCodeLine{126         map<string,double>::const\_iterator it\_sec=it-\/>second.begin();}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128         \textcolor{comment}{// Inv: it<=Tabla.end()}}
+\DoxyCodeLine{129         \textcolor{comment}{// Se han creado los clústers de los elementos anteriores a it.}}
+\DoxyCodeLine{130         \textcolor{comment}{// Las distancias de los elementos posteriores a it no han sido tratados.}}
+\DoxyCodeLine{131         \textcolor{keywordflow}{while} (it!=\mbox{\hyperlink{class_cjt__especies_afb202e1d944b7d3761a99181c7e43239}{Tabla}}.end()) \{}
+\DoxyCodeLine{132             pair <string,double> aux;}
+\DoxyCodeLine{133             aux.first=it-\/>first;}
+\DoxyCodeLine{134             aux.second=-\/1;}
+\DoxyCodeLine{135             clu.\mbox{\hyperlink{class_cjt__clusters_ad9ddb241da49a8d32f17676b83706a4b}{crea\_clusters}}(aux);}
+\DoxyCodeLine{136             map<string,double> b;}
+\DoxyCodeLine{137             it\_sec=it-\/>second.begin();}
+\DoxyCodeLine{138             \textcolor{comment}{// Inv: it\_sec<=it-\/>second.end()}}
+\DoxyCodeLine{139             \textcolor{comment}{// b ha recogido la información de los identificadores y distancias desde}}
+\DoxyCodeLine{140             \textcolor{comment}{// it-\/>second.begin() hasta el elemento anterior a it\_sec con el it actual}}
+\DoxyCodeLine{141             \textcolor{keywordflow}{while} (it\_sec!=it-\/>second.end()) \{}
+\DoxyCodeLine{142                 b.insert(make\_pair(it\_sec-\/>first,it\_sec-\/>second));}
+\DoxyCodeLine{143                 ++it\_sec;}
+\DoxyCodeLine{144             \}}
+\DoxyCodeLine{145             \textcolor{comment}{// Post: b ha recogido la información de los identificadores y distancias desde}}
+\DoxyCodeLine{146             \textcolor{comment}{// it-\/>second.begin() hasta it-\/>second.end()-\/1 con el it actual}}
+\DoxyCodeLine{147             clu.\mbox{\hyperlink{class_cjt__clusters_a69207ddf20a3738ede1b54437077cea2}{crea\_tabla\_cluster}}(it-\/>first,b);}
+\DoxyCodeLine{148             ++it;}
+\DoxyCodeLine{149         \}}
+\DoxyCodeLine{150         \textcolor{comment}{// Post: se han creado los clústers desde los elementos "first" de Tabla.begin()}}
+\DoxyCodeLine{151         \textcolor{comment}{// a Tabla.end()-\/1. Se han creado también todas las distancias de entre elementos sin }}
+\DoxyCodeLine{152         \textcolor{comment}{// repetición de información}}
+\DoxyCodeLine{153     \}}
+\DoxyCodeLine{154 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_a7ddd1ba65a5f594da23780f1ccaa5682}\label{class_cjt__especies_a7ddd1ba65a5f594da23780f1ccaa5682}} 
+\index{Cjt\_especies@{Cjt\_especies}!lee\_cjt\_especies@{lee\_cjt\_especies}}
+\index{lee\_cjt\_especies@{lee\_cjt\_especies}!Cjt\_especies@{Cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{lee\_cjt\_especies()}{lee\_cjt\_especies()}}
+{\footnotesize\ttfamily void Cjt\+\_\+especies\+::lee\+\_\+cjt\+\_\+especies (\begin{DoxyParamCaption}\item[{const int}]{k }\end{DoxyParamCaption})}
+
+
+
+Lectura\+: Acción que lee un conjunto de especies. 
+
+\begin{DoxyPrecond}{Precondición}
+Hay preparados en el canal estándar de entrada un entero n ≥ 0 y a continuación una secuencia de n especies con sus correspondientes id\+\_\+especie-\/gen. No hay id\+\_\+especies repetidas. Los contenidos previos del conjunto de especies se descartan y las n especies nuevas leídas se agregan al conjunto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se han leído por el canal estándar de entrada el conjunto de especies del parámetro implicito. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 159 del archivo Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{159                                                \{}
+\DoxyCodeLine{160     \textcolor{comment}{// Lee un conjunto de especies}}
+\DoxyCodeLine{161     \mbox{\hyperlink{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}{Cjt}}.clear();}
+\DoxyCodeLine{162     \mbox{\hyperlink{class_cjt__especies_afb202e1d944b7d3761a99181c7e43239}{Tabla}}.clear();}
+\DoxyCodeLine{163     \textcolor{keywordtype}{int} n;}
+\DoxyCodeLine{164     cin>>n;}
+\DoxyCodeLine{165     \textcolor{comment}{// Inv: 0<=i<=n. Se han leído y añadido al conjunto las especies anteriores a i.}}
+\DoxyCodeLine{166     \textcolor{comment}{// Las especies entre [i...n-\/1] aún no han sido tratadas.}}
+\DoxyCodeLine{167     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<n; ++i) \{}
+\DoxyCodeLine{168         \mbox{\hyperlink{class_especie}{Especie}} e;}
+\DoxyCodeLine{169         e.\mbox{\hyperlink{class_especie_a56ca4b4f3e11d085e0870e3f911be0bb}{lee\_especie}}(k);}
+\DoxyCodeLine{170         \mbox{\hyperlink{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}{Cjt}}.insert(make\_pair(e.\mbox{\hyperlink{class_especie_adcaec4823514dce6631195f700ff90bc}{consultar\_id\_especie}}(), e));}
+\DoxyCodeLine{171     \}}
+\DoxyCodeLine{172     \textcolor{comment}{// Post: han sido leídas y añadidas al conjunto las especies desde [i=0...i=n-\/1].}}
+\DoxyCodeLine{173     \mbox{\hyperlink{class_cjt__especies_a31440ead967629d65990b2e2525b71cb}{crea\_distancias}}();}
+\DoxyCodeLine{174 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_aba7f0f935b6e0b8eb38337ad8675fead}\label{class_cjt__especies_aba7f0f935b6e0b8eb38337ad8675fead}} 
+\index{Cjt\_especies@{Cjt\_especies}!imprime\_cjt\_especies@{imprime\_cjt\_especies}}
+\index{imprime\_cjt\_especies@{imprime\_cjt\_especies}!Cjt\_especies@{Cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{imprime\_cjt\_especies()}{imprime\_cjt\_especies()}}
+{\footnotesize\ttfamily void Cjt\+\_\+especies\+::imprime\+\_\+cjt\+\_\+especies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Escritura\+: Acción que imprime un conjunto de especies. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cierto.} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se han escrito por el canal estándar de salida el conjunto de especies del parámetro implicito. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 176 del archivo Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{176                                              \{}
+\DoxyCodeLine{177     \textcolor{comment}{// Imprime un conjunto de especies}}
+\DoxyCodeLine{178     map<string,Especie>::const\_iterator it = \mbox{\hyperlink{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}{Cjt}}.begin();}
+\DoxyCodeLine{179     \textcolor{comment}{// Inv: Los iteradores posteriors a it no han sido imprimidos}}
+\DoxyCodeLine{180     \textcolor{comment}{// Se han imprimido los valores de it "second" (especies) de los elementos entre Cjt.begin()}}
+\DoxyCodeLine{181     \textcolor{comment}{// y el anterior a it}}
+\DoxyCodeLine{182   \textcolor{keywordflow}{while}(it != \mbox{\hyperlink{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}{Cjt}}.end()) \{}
+\DoxyCodeLine{183     (*it).second.imprime\_especie();}
+\DoxyCodeLine{184         ++it;}
+\DoxyCodeLine{185   \}}
+\DoxyCodeLine{186     \textcolor{comment}{// Post: se han imprimido los elementos del conjunto desde Cjt.begin() hasta Cjt.end()-\/1}}
+\DoxyCodeLine{187 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_a653d6b120928015ad38a5dc30ebeec8e}\label{class_cjt__especies_a653d6b120928015ad38a5dc30ebeec8e}} 
+\index{Cjt\_especies@{Cjt\_especies}!tabla\_distancias@{tabla\_distancias}}
+\index{tabla\_distancias@{tabla\_distancias}!Cjt\_especies@{Cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{tabla\_distancias()}{tabla\_distancias()}}
+{\footnotesize\ttfamily void Cjt\+\_\+especies\+::tabla\+\_\+distancias (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Escritura\+: Acción que imprime la tabla de distancias. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cierto.} No hay pares de especiesrepetidos ni distancias duplicadas. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Imprime la tabla de distancias entre cada par de especies del conjunto (p.\+i.). 
+\end{DoxyPostcond}
+
+
+Definición en la línea 189 del archivo Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{189                                          \{}
+\DoxyCodeLine{190     \textcolor{comment}{// Imprime la tabla de distancias del conjunto de especies}}
+\DoxyCodeLine{191     map<string, map <string,double> >::const\_iterator it = \mbox{\hyperlink{class_cjt__especies_afb202e1d944b7d3761a99181c7e43239}{Tabla}}.begin();}
+\DoxyCodeLine{192     \textcolor{comment}{// Inv: Los iteradores posteriors a it no han sido imprimidos}}
+\DoxyCodeLine{193     \textcolor{comment}{// Se han imprimido los valores de it de los elementos entre Tabla.begin() y el anterior a it}}
+\DoxyCodeLine{194     \textcolor{keywordflow}{while} (it!=\mbox{\hyperlink{class_cjt__especies_afb202e1d944b7d3761a99181c7e43239}{Tabla}}.end()) \{}
+\DoxyCodeLine{195         map <string, double>::const\_iterator it\_sec = it-\/>second.begin();}
+\DoxyCodeLine{196         cout<< (*it).first << \textcolor{stringliteral}{":"};}
+\DoxyCodeLine{197         \textcolor{comment}{// Inv: los iteradores posteriors a it\_sec no han sido imprimidos.}}
+\DoxyCodeLine{198         \textcolor{comment}{// Se han imprimido los valores desde it-\/>second.begin al anterior a it\_sec}}
+\DoxyCodeLine{199         \textcolor{keywordflow}{while} (it\_sec!=it-\/>second.end()) \{ }
+\DoxyCodeLine{200             cout << \textcolor{stringliteral}{" "}<<(*it\_sec).first << \textcolor{stringliteral}{" ("} << (*it\_sec).second <<\textcolor{stringliteral}{")"};}
+\DoxyCodeLine{201             ++it\_sec;}
+\DoxyCodeLine{202         \}}
+\DoxyCodeLine{203         \textcolor{comment}{// Post: se han imprimido los elementos desde it-\/>second.begin() hasta it-\/>second.end()-\/1.}}
+\DoxyCodeLine{204         cout<<endl;}
+\DoxyCodeLine{205         ++it;}
+\DoxyCodeLine{206     \}}
+\DoxyCodeLine{207     \textcolor{comment}{// Post: se han imprimido los elementos de la tabla desde Tabla.begin() hasta Tabla.end()-\/1}}
+\DoxyCodeLine{208 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}\label{class_cjt__especies_a796349af2e2151bf1277f4be8e75d117}} 
+\index{Cjt\_especies@{Cjt\_especies}!Cjt@{Cjt}}
+\index{Cjt@{Cjt}!Cjt\_especies@{Cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{Cjt}{Cjt}}
+{\footnotesize\ttfamily map$<$string,\mbox{\hyperlink{class_especie}{Especie}}$>$ Cjt\+\_\+especies\+::\+Cjt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Conjunto de especies; el primer elemento es el identificador y el segundo es la especie. 
+
+
+
+Definición en la línea 30 del archivo Cjt\+\_\+especies.\+hh.
+
+\mbox{\Hypertarget{class_cjt__especies_afb202e1d944b7d3761a99181c7e43239}\label{class_cjt__especies_afb202e1d944b7d3761a99181c7e43239}} 
+\index{Cjt\_especies@{Cjt\_especies}!Tabla@{Tabla}}
+\index{Tabla@{Tabla}!Cjt\_especies@{Cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{Tabla}{Tabla}}
+{\footnotesize\ttfamily map$<$string, map$<$string,double$>$ $>$ Cjt\+\_\+especies\+::\+Tabla\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Conjunto de distancias entre especies. El primer elemento del primer bloque es el identificador de una especie, y el primer elemento del segundo bloque es el identificador de la segunda especie. El segundo elemento del segundo bloque es la distancia entre ambas. 
+
+
+
+Definición en la línea 35 del archivo Cjt\+\_\+especies.\+hh.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_cjt__especies_8hh}{Cjt\+\_\+especies.\+hh}}\item 
+\mbox{\hyperlink{_cjt__especies_8cc}{Cjt\+\_\+especies.\+cc}}\end{DoxyCompactItemize}

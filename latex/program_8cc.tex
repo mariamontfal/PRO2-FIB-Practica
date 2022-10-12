@@ -1,0 +1,173 @@
+\hypertarget{program_8cc}{}\doxysection{Referencia del Archivo program.\+cc}
+\label{program_8cc}\index{program.cc@{program.cc}}
+
+
+Programa principal para la práctica Primavera 2020 -\/ Árbol filogenético.  
+
+
+Dependencia gráfica adjunta para program.\+cc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{program_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Programa principal para la práctica Primavera 2020 -\/ Árbol filogenético. 
+
+Se toma como asunción que los datos leídos son siempre correctos, ya que no se incluyen comprobaciones para verificar esto. Esto implica, entre otras cosas, que el k leído al inicio del programa principal nunca será mayor a la longitud de un gen de cualquier especie.
+
+Al inicio del programa se lee una constante k la cual nos indica los carácteres en los que dividir el gen de las especies del conjunto; después se crean un conjunto de especies y un conjunto de clústers vacíos con los que se trabaja a lo largo de la ejecución. Además, este módulo es el encargado de hacer las llamadas a los métodos solicitados y lanzar los mensajes de error en caso de ser necesarios. 
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{program.cc@{program.cc}!main@{main}}
+\index{main@{main}!program.cc@{program.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 51 del archivo program.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{51             \{}
+\DoxyCodeLine{52   }
+\DoxyCodeLine{53   \textcolor{keywordtype}{int} k;}
+\DoxyCodeLine{54   cin>>k; \textcolor{comment}{//número de carácteres que se utilizará para generar los subtstrings del gen}}
+\DoxyCodeLine{55   \textcolor{keywordtype}{string} op; \textcolor{comment}{//operación a ejecutar}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57   \mbox{\hyperlink{class_cjt__especies}{Cjt\_especies}} cjt;}
+\DoxyCodeLine{58   \mbox{\hyperlink{class_cjt__clusters}{Cjt\_clusters}} clu;}
+\DoxyCodeLine{59   }
+\DoxyCodeLine{60   \textcolor{keywordflow}{while} (cin>>op and op!=\textcolor{stringliteral}{"fin"}) \{}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keywordflow}{if} (op==\textcolor{stringliteral}{"lee\_cjt\_especies"})\{}
+\DoxyCodeLine{63       cjt.\mbox{\hyperlink{class_cjt__especies_a7ddd1ba65a5f594da23780f1ccaa5682}{lee\_cjt\_especies}}(k);}
+\DoxyCodeLine{64       cout<<\textcolor{stringliteral}{"\# "} <<op<<endl;}
+\DoxyCodeLine{65     \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op==\textcolor{stringliteral}{"crea\_especie"})\{}
+\DoxyCodeLine{68       \textcolor{keywordtype}{string} id\_especie,gen;}
+\DoxyCodeLine{69       cin>>id\_especie>>gen;}
+\DoxyCodeLine{70       cout << \textcolor{stringliteral}{"\# "}<< op << \textcolor{stringliteral}{" "} << id\_especie << \textcolor{stringliteral}{" "} << gen<<endl;}
+\DoxyCodeLine{71       \textcolor{keywordflow}{if} (cjt.\mbox{\hyperlink{class_cjt__especies_a89deb81b1cc83863d1830ab05b473132}{existe\_especie}}(id\_especie)) cout<<\textcolor{stringliteral}{"ERROR: La especie "}<< id\_especie << \textcolor{stringliteral}{" ya existe."}<<endl;}
+\DoxyCodeLine{72       \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{73         \mbox{\hyperlink{class_especie}{Especie}} e (id\_especie,gen,k);}
+\DoxyCodeLine{74         cjt.\mbox{\hyperlink{class_cjt__especies_aa95efc97c3deb6fdf8aea2d74c2fabbc}{crea\_especie}}(e);}
+\DoxyCodeLine{75       \}}
+\DoxyCodeLine{76     \}}
+\DoxyCodeLine{77     }
+\DoxyCodeLine{78     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op==\textcolor{stringliteral}{"obtener\_gen"})\{}
+\DoxyCodeLine{79       \textcolor{keywordtype}{string} id\_especie;}
+\DoxyCodeLine{80       cin>>id\_especie;}
+\DoxyCodeLine{81       cout<<\textcolor{stringliteral}{"\# "}<<op<<\textcolor{stringliteral}{" "}<<id\_especie<<endl;}
+\DoxyCodeLine{82       \textcolor{keywordflow}{if} (cjt.\mbox{\hyperlink{class_cjt__especies_a89deb81b1cc83863d1830ab05b473132}{existe\_especie}}(id\_especie)) cout<<cjt.\mbox{\hyperlink{class_cjt__especies_aa3a4ba2dd9cf056739ab0a97c549379d}{obtener\_gen}}(id\_especie)<<endl;}
+\DoxyCodeLine{83       \textcolor{keywordflow}{else} cout<<\textcolor{stringliteral}{"ERROR: La especie "}<<id\_especie<< \textcolor{stringliteral}{" no existe."}<<endl;}
+\DoxyCodeLine{84     \}}
+\DoxyCodeLine{85     }
+\DoxyCodeLine{86     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op==\textcolor{stringliteral}{"distancia"})\{}
+\DoxyCodeLine{87       \textcolor{keywordtype}{string} id\_a, id\_b;}
+\DoxyCodeLine{88       cin>>id\_a>>id\_b;}
+\DoxyCodeLine{89       cout<<\textcolor{stringliteral}{"\# "}<<op<<\textcolor{stringliteral}{" "}<<id\_a<<\textcolor{stringliteral}{" "}<< id\_b<<endl;}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91       \textcolor{keywordflow}{if} (cjt.\mbox{\hyperlink{class_cjt__especies_a89deb81b1cc83863d1830ab05b473132}{existe\_especie}}(id\_a) and cjt.\mbox{\hyperlink{class_cjt__especies_a89deb81b1cc83863d1830ab05b473132}{existe\_especie}}(id\_b)) \{}
+\DoxyCodeLine{92         \textcolor{keywordtype}{double} d=0;}
+\DoxyCodeLine{93         \textcolor{keywordflow}{if} (id\_a==id\_b) cout<<d;}
+\DoxyCodeLine{94         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{95           d = cjt.\mbox{\hyperlink{class_cjt__especies_ab59e25df0794d18893a1fe0fc1b86da6}{distancia\_cjt}}(id\_a,id\_b);}
+\DoxyCodeLine{96         \}}
+\DoxyCodeLine{97         cout << d << endl;}
+\DoxyCodeLine{98       \}}
+\DoxyCodeLine{99       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (not cjt.\mbox{\hyperlink{class_cjt__especies_a89deb81b1cc83863d1830ab05b473132}{existe\_especie}}(id\_a) and not cjt.\mbox{\hyperlink{class_cjt__especies_a89deb81b1cc83863d1830ab05b473132}{existe\_especie}}(id\_b)) \{}
+\DoxyCodeLine{100         cout << \textcolor{stringliteral}{"ERROR: La especie "} << id\_a <<\textcolor{stringliteral}{" y la especie "} << id\_b << \textcolor{stringliteral}{" no existen."} <<endl;}
+\DoxyCodeLine{101       \}}
+\DoxyCodeLine{102       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (not cjt.\mbox{\hyperlink{class_cjt__especies_a89deb81b1cc83863d1830ab05b473132}{existe\_especie}}(id\_a)) cout << \textcolor{stringliteral}{"ERROR: La especie "} <<  id\_a << \textcolor{stringliteral}{" no existe."} << endl;}
+\DoxyCodeLine{103       \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"ERROR: La especie "} << id\_b << \textcolor{stringliteral}{" no existe."} << endl;}
+\DoxyCodeLine{104     \}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op==\textcolor{stringliteral}{"elimina\_especie"})\{}
+\DoxyCodeLine{107       \textcolor{keywordtype}{string} id\_especie;}
+\DoxyCodeLine{108       cin >> id\_especie;}
+\DoxyCodeLine{109       \textcolor{keywordflow}{if} (cjt.\mbox{\hyperlink{class_cjt__especies_a89deb81b1cc83863d1830ab05b473132}{existe\_especie}}(id\_especie)) \{}
+\DoxyCodeLine{110         cout<<\textcolor{stringliteral}{"\# elimina\_especie "}<<id\_especie<<endl;}
+\DoxyCodeLine{111         cjt.\mbox{\hyperlink{class_cjt__especies_a30828ba7b13ef16d4d15b3c75fb7a3e3}{elimina\_especie}}(id\_especie);}
+\DoxyCodeLine{112       \} }
+\DoxyCodeLine{113       \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{114         cout<<\textcolor{stringliteral}{"\# elimina\_especie "}<<id\_especie<<endl;}
+\DoxyCodeLine{115         cout << \textcolor{stringliteral}{"ERROR: La especie "} <<id\_especie<< \textcolor{stringliteral}{" no existe."}<<endl;}
+\DoxyCodeLine{116       \}}
+\DoxyCodeLine{117     \}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op==\textcolor{stringliteral}{"existe\_especie"})\{}
+\DoxyCodeLine{120       \textcolor{keywordtype}{string} id\_especie;}
+\DoxyCodeLine{121       cin >> id\_especie;}
+\DoxyCodeLine{122       cout<<\textcolor{stringliteral}{"\# "}<<op<<\textcolor{stringliteral}{" "}<<id\_especie<<endl;}
+\DoxyCodeLine{123       \textcolor{keywordflow}{if} (cjt.\mbox{\hyperlink{class_cjt__especies_a89deb81b1cc83863d1830ab05b473132}{existe\_especie}}(id\_especie)) cout << \textcolor{stringliteral}{"SI"}<<endl;}
+\DoxyCodeLine{124       \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"NO"} << endl;}
+\DoxyCodeLine{125     \} }
+\DoxyCodeLine{126         }
+\DoxyCodeLine{127     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op==\textcolor{stringliteral}{"imprime\_cjt\_especies"})\{}
+\DoxyCodeLine{128       cout<<\textcolor{stringliteral}{"\# "}<<op<<endl;}
+\DoxyCodeLine{129       cjt.\mbox{\hyperlink{class_cjt__especies_aba7f0f935b6e0b8eb38337ad8675fead}{imprime\_cjt\_especies}}();}
+\DoxyCodeLine{130     \}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op==\textcolor{stringliteral}{"tabla\_distancias"})\{}
+\DoxyCodeLine{133       cout<<\textcolor{stringliteral}{"\# "}<<op<<endl;}
+\DoxyCodeLine{134       cjt.\mbox{\hyperlink{class_cjt__especies_a653d6b120928015ad38a5dc30ebeec8e}{tabla\_distancias}}();}
+\DoxyCodeLine{135     \}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op==\textcolor{stringliteral}{"inicializa\_clusters"})\{}
+\DoxyCodeLine{138       cout<<\textcolor{stringliteral}{"\# "}<<op<<endl;}
+\DoxyCodeLine{139       clu=\mbox{\hyperlink{class_cjt__clusters}{Cjt\_clusters}}();}
+\DoxyCodeLine{140       cjt.\mbox{\hyperlink{class_cjt__especies_a8c19a46235a5c9ec727373ae35d6a615}{inicializa\_clusters}}(clu);}
+\DoxyCodeLine{141       clu.\mbox{\hyperlink{class_cjt__clusters_af0d9a42ecfc19fdb14bc88f032e21122}{imprime\_tab\_distancias}}();}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     \}}
+\DoxyCodeLine{144      }
+\DoxyCodeLine{145     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op==\textcolor{stringliteral}{"ejecuta\_paso\_wpgma"})\{}
+\DoxyCodeLine{146       cout<<\textcolor{stringliteral}{"\# "}<<op<<endl;}
+\DoxyCodeLine{147       \textcolor{keywordflow}{if} (clu.\mbox{\hyperlink{class_cjt__clusters_a9f6ba4171cac305134503cc952287b0d}{apto\_para\_wpgma}}()) \{}
+\DoxyCodeLine{148         clu.\mbox{\hyperlink{class_cjt__clusters_aaf7f2ef6a54adadc53865eaff6f05ee4}{ejecuta\_paso\_wpgma}}();}
+\DoxyCodeLine{149       \}}
+\DoxyCodeLine{150       \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{151         cout<<\textcolor{stringliteral}{"ERROR: num\_clusters <= 1"}<<endl;}
+\DoxyCodeLine{152       \}}
+\DoxyCodeLine{153     \}}
+\DoxyCodeLine{154     }
+\DoxyCodeLine{155     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op==\textcolor{stringliteral}{"imprime\_cluster"})\{}
+\DoxyCodeLine{156       \textcolor{keywordtype}{string} id\_especie;}
+\DoxyCodeLine{157       cin >> id\_especie;}
+\DoxyCodeLine{158       cout<<\textcolor{stringliteral}{"\# "}<<op<<\textcolor{stringliteral}{" "}<<id\_especie<<endl;}
+\DoxyCodeLine{159       \textcolor{keywordflow}{if} (clu.\mbox{\hyperlink{class_cjt__clusters_ae0797f812ce454df2e99d48456b27cf2}{existe\_cluster}}(id\_especie)) \{}
+\DoxyCodeLine{160         clu.\mbox{\hyperlink{class_cjt__clusters_ab343e63cae0441ab496217fb4cf54886}{imprime\_cluster}}(id\_especie);}
+\DoxyCodeLine{161         cout<<endl;}
+\DoxyCodeLine{162       \}}
+\DoxyCodeLine{163       \textcolor{keywordflow}{else} cout<< \textcolor{stringliteral}{"ERROR: El cluster "} <<id\_especie<< \textcolor{stringliteral}{" no existe."}<<endl;}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165     \}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op==\textcolor{stringliteral}{"imprime\_arbol\_filogenetico"})\{}
+\DoxyCodeLine{168       cout<<\textcolor{stringliteral}{"\# "}<<op<<endl;}
+\DoxyCodeLine{169       clu=\mbox{\hyperlink{class_cjt__clusters}{Cjt\_clusters}}();}
+\DoxyCodeLine{170       cjt.\mbox{\hyperlink{class_cjt__especies_a8c19a46235a5c9ec727373ae35d6a615}{inicializa\_clusters}}(clu);}
+\DoxyCodeLine{171       \textcolor{keywordflow}{if} (clu.\mbox{\hyperlink{class_cjt__clusters_a65d9b0bbf963d998944bcf3dcb7d91ac}{arbol\_vacio}}()) cout<<\textcolor{stringliteral}{"ERROR: El conjunto de clusters es vacio."};}
+\DoxyCodeLine{172       \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{173         clu.\mbox{\hyperlink{class_cjt__clusters_a3fa76914729c387649692829cea0ce84}{imprime\_arbol\_filogenetico}}();}
+\DoxyCodeLine{174       \}}
+\DoxyCodeLine{175       cout<<endl;}
+\DoxyCodeLine{176     \}}
+\DoxyCodeLine{177     cout<<endl;}
+\DoxyCodeLine{178   \}}
+\DoxyCodeLine{179 \}}
+
+\end{DoxyCode}
