@@ -26,20 +26,21 @@ Fecha: 19/05/2020
 
 Lista de las clases, estructuras, uniones e interfaces con una breve descripción:
 ```
- - Cjt_clusters:	Representa el conjunto de características y operaciones relativas a los clústers
- - Cjt_especies:	Representa el conjunto de características y operaciones relativas al conjunto de especies
- - Especie:	Representa la información y las operaciones asociadas a una especie
+ - Cjt_clusters: Representa el conjunto de características y operaciones relativas a los clústers
+ - Cjt_especies: Representa el conjunto de características y operaciones relativas al conjunto de especies
+ - Especie: Representa la información y las operaciones asociadas a una especie
 ```
 
 ## Archivos
 
 Lista de todos los archivos con descripciones breves:
 ```
- - Cjt_clusters.cc:	Código de la clase Cjt_clusters
- - Cjt_clusters.hh:	Representa el conjunto de características y operaciones relativas a los clústers
- - Cjt_especies.cc:	Código de la clase Cjt_especies
- - Cjt_especies.hh:	Representa el conjunto de características y operaciones relativas al conjunto de especies
- - Especie.cc:	Código de la clase Especie
- - Especie.hh:	Especificación de la clase Especie
- - program.cc:	Programa principal para la práctica Primavera 2020 - Árbol filogenético
+ - Cjt_clusters.cc: Código de la clase Cjt_clusters
+ - Cjt_clusters.hh: Representa el conjunto de características y operaciones relativas a los clústers
+ - Cjt_especies.cc: Código de la clase Cjt_especies
+ - Cjt_especies.hh: Representa el conjunto de características y operaciones relativas al conjunto de especies
+ - Especie.cc: Código de la clase Especie
+ - Especie.hh: Especificación de la clase Especie
+ - program.cc: Programa principal para la práctica Primavera 2020 - Árbol filogenético
+ - Makefile
 ```
